@@ -1,0 +1,30 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main # Replace 'main' with your default branch name if different
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js (if applicable, for build steps)
+        uses: actions/setup-node@v3
+        with:
+          node-version: "16" # Adjust as needed
+
+      - name: Install dependencies and build (if applicable)
+        run: |
+          npm install
+          npm run build # Replace this with your build command if different
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: Sites # Replace with your folder name (e.g., 'dist' or 'build')

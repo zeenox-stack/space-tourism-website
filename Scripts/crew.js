@@ -5,7 +5,7 @@ import {
   setLink,
   setActiveClass,
   splitLink,
-} from "/Scripts/functionality.js";
+} from "./functionality.js";
 
 const values = mutate(splitLink(window.location.href, true));
 console.log(values);

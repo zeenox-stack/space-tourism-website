@@ -12,7 +12,7 @@ export function navStyle(openingValue) {
 
 async function fetchData(category, pageName, type) {
   try {
-    const fetching = await fetch("/data.json");
+    const fetching = await fetch("./Scripts/data/data.json");
 
     if (!fetching.ok) return console.error("error occured");
 
@@ -77,7 +77,7 @@ function pageNum(category) {
 
 export function loadHeader() {
   return ` <header>
-    <img src="/assets/shared/logo.svg" alt="logo" />
+    <img src="./assets/shared/logo.svg" alt="logo" />
     <nav class="main-nav">
       <a href="index.html"><span class="num">00</span> HOME</a>
       <a href="destination-moon.html" class="dest"
@@ -89,7 +89,7 @@ export function loadHeader() {
       >
     </nav>
     <img
-      src="/assets/shared/icon-hamburger.svg"
+      src="./assets/shared/icon-hamburger.svg"
       alt="menu"
       class="nav-open" 
     />
@@ -113,8 +113,8 @@ export async function crewContent(category, pageName, elementToEmbed, type) {
     <img src=${data.images.png} alt="Picture of ${data.role} ${pageName}" />
     </section>
     </main>
-    <a href="" class="right-arrow"><img src="/Icons/Arrow Icon.png" alt="Go to the right" /></a>
-    <a href="" class="left-arrow"><img src="/Icons/Arrow Icon.png" alt="Go to the right" /></a>
+    <a href="" class="right-arrow"><img src="./Icons/Arrow Icon.png" alt="Go to the right" /></a>
+    <a href="" class="left-arrow"><img src=".destina/Icons/Arrow Icon.png" alt="Go to the right" /></a>
     <div class="indicator">
     <div class="dots"></div>
     <div class="dots"></div>

@@ -17,7 +17,9 @@ async function fetchData(category, pageName, type) {
     if (!fetching.ok) return console.error("error occured");
 
     const data = await fetching.json();
-    const page = type ? (data[category].find((item) => item.roles === pageName)) : (data[category].find((item) => item.name === pageName));
+    const page = type
+      ? data[category].find((item) => item.roles === pageName)
+      : data[category].find((item) => item.name === pageName);
     return page;
   } catch (err) {
     console.error("Error: ", err.message);
@@ -114,7 +116,7 @@ export async function crewContent(category, pageName, elementToEmbed, type) {
     </section>
     </main>
     <a href="" class="right-arrow"><img src="./Icons/Arrow Icon.png" alt="Go to the right" /></a>
-    <a href="" class="left-arrow"><img src=".destina/Icons/Arrow Icon.png" alt="Go to the right" /></a>
+    <a href="" class="left-arrow"><img src="./Icons/Arrow Icon.png" alt="Go to the left" /></a>
     <div class="indicator">
     <div class="dots"></div>
     <div class="dots"></div>
@@ -130,13 +132,13 @@ function isActive(changeClass, type) {
       changeClass.classList.add("active");
     } else {
       changeClass.classList.remove("active");
-    } 
+    }
   } else {
     if (splitLink(window.location.href) === splitLink(changeClass.href)) {
       changeClass.classList.add("active");
     } else {
       changeClass.classList.remove("active");
-    } 
+    }
   }
 }
 
@@ -148,14 +150,14 @@ export function getValues(nav, type) {
 }
 
 export function splitLink(linkToSplit, type) {
-  const url = linkToSplit.split('/'); 
-  const values = url[url.length - 1].split('.')[0].split('-'); 
+  const url = linkToSplit.split("/");
+  const values = url[url.length - 1].split(".")[0].split("-");
   return type ? values : values[0];
 }
 
 export async function techContent(category, pageName, elementToEmbed) {
-  const data = await fetchData(category, pageName, true); 
-console.log(data.name);
+  const data = await fetchData(category, pageName, true);
+  console.log(data.name);
   return (elementToEmbed.innerHTML = `
   ${loadHeader()}
   <p class="intro"><span>${pageNum(category)}</span> SPACE LAUNCH 101</p>
@@ -175,32 +177,48 @@ console.log(data.name);
       </div>
     </section>
     <section class="image">
-     <img src=${data.images.portrait} alt="photo of ${data.name}" class="desktop-mode" />
-     <img src=${data.images.landscape} alt="photo of ${data.name}" class="mobile-mode" />
+     <img src=${data.images.portrait} alt="photo of ${
+    data.name
+  }" class="desktop-mode" />
+     <img src=${data.images.landscape} alt="photo of ${
+    data.name
+  }" class="mobile-mode" />
     </section>
   </main>
   `);
 }
 
 export function setLink(rArrow, lArrow) {
-const links = ['crew-pilot.html', 'crew-commander.html', 'crew-engineer.html', 'crew-specialist.html']; 
-links.forEach(link => {
+  const links = [
+    "crew-pilot.html",
+    "crew-commander.html",
+    "crew-engineer.html",
+    "crew-specialist.html",
+  ];
+  links.forEach((link) => {
     if (window.location.href.includes(link)) {
-      links[links.indexOf(link) + 1] !== undefined ? rArrow.href = links[links.indexOf(link) + 1] : rArrow.style.display = 'none'; 
-      links[links.indexOf(link) - 1] !== undefined ? lArrow.href = links[links.indexOf(link) - 1] : lArrow.style.display = 'none'; 
-    }
-})
-}
-
-export function setActiveClass(valueToSet) {
-  const dots = document.querySelectorAll(`${valueToSet}`); 
-  const a = ['crew-pilot.html', 'crew-commander.html', 'crew-engineer.html', 'crew-specialist.html']; 
-  
-  a.forEach(link => {
-    if (window.location.href.includes(link)) {
-      dots[a.indexOf(link)].classList.add('active')
+      links[links.indexOf(link) + 1] !== undefined
+        ? (rArrow.href = links[links.indexOf(link) + 1])
+        : (rArrow.style.display = "none");
+      links[links.indexOf(link) - 1] !== undefined
+        ? (lArrow.href = links[links.indexOf(link) - 1])
+        : (lArrow.style.display = "none");
     }
   });
 }
 
+export function setActiveClass(valueToSet) {
+  const dots = document.querySelectorAll(`${valueToSet}`);
+  const a = [
+    "crew-pilot.html",
+    "crew-commander.html",
+    "crew-engineer.html",
+    "crew-specialist.html",
+  ];
 
+  a.forEach((link) => {
+    if (window.location.href.includes(link)) {
+      dots[a.indexOf(link)].classList.add("active");
+    }
+  });
+}

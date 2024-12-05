@@ -11,7 +11,7 @@ contentDeliver(values[0], values[1], document.body).then(() => {
   const navOpener = document.querySelector(".nav-open");
   const nav = document.querySelector(".main-nav");
 
-  navOpener.src = `../assets/shared/icon-${
+  navOpener.src = `./assets/shared/icon-${
     navOpener.src.includes("hamburger") ? "close" : "hamburger"
   }.svg`;
 

@@ -8,7 +8,6 @@ import {
 } from "./functionality.js";
 
 const values = mutate(splitLink(window.location.href, true));
-console.log(values);
 
 crewContent(values[0], values[1], document.body, true).then(() => {
   const mainNav = document.querySelector(".nav-open");
@@ -17,6 +16,9 @@ crewContent(values[0], values[1], document.body, true).then(() => {
   const lArrow = document.querySelector(".left-arrow");
 
   mainNav.addEventListener("click", () => navStyle(nav));
+  mainNav.src = `./assets/shared/icon-${
+    mainNav.src.includes("hamburger") ? "close" : "hamburger"
+  }.svg`;
 
   getValues(".main-nav", "nav");
   setLink(rArrow, lArrow);

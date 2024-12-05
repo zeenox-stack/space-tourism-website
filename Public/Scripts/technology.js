@@ -13,7 +13,7 @@ techContent(values[0], values[1], document.body).then(() => {
   mainNav.addEventListener("click", () => {
     navStyle(nav);
 
-    mainNav.src = `../assets/shared/icon-${
+    mainNav.src = `./assets/shared/icon-${
       mainNav.src.includes("hamburger") ? "close" : "hamburger"
     }.svg`;
   });

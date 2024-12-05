@@ -1,5 +1,5 @@
 body {
-  background: url(/assets/crew/background-crew-desktop.jpg);
+  background: url(../assets/crew/background-crew-desktop.jpg);
   color: white;
   background-repeat: no-repeat;
   background-position: contain;
@@ -70,7 +70,7 @@ header > img {
   justify-content: space-evenly;
   align-items: center;
   height: 65vh;
-  overflow: hidden; 
+  overflow: hidden;
   animation: onLoad 1s 1 ease;
 }
 
@@ -125,16 +125,17 @@ body > .intro {
   position: absolute;
   top: 50%;
   right: 1rem;
-  height: 2.5rem; 
+  height: 2.5rem;
   width: 2.5rem;
   background-color: transparent;
-  border-radius: 50%; 
+  border-radius: 50%;
   border: 0.1px solid gray;
   padding: 0.25rem;
-  opacity: 0.1; 
+  opacity: 0.1;
 }
 
-.right-arrow > img, .left-arrow > img {
+.right-arrow > img,
+.left-arrow > img {
   height: 2.5rem;
 }
 
@@ -145,11 +146,12 @@ body > .intro {
 
 .right-arrow:active,
 .left-arrow:active {
-  opacity: 1; 
+  opacity: 1;
 }
 
-.right-arrow:hover, .left-arrow:hover {
-  background-color: white; 
+.right-arrow:hover,
+.left-arrow:hover {
+  background-color: white;
   opacity: 0.5;
 }
 
@@ -158,19 +160,19 @@ body > .intro {
 }
 
 .dots {
-  content: " "; 
-  background-color: gray;  
-  width: 0.6rem; 
-  height: 0.6rem; 
+  content: " ";
+  background-color: gray;
+  width: 0.6rem;
+  height: 0.6rem;
   border-radius: 50%;
 }
 
-.indicator { 
-  display: flex; 
+.indicator {
+  display: flex;
   margin-top: 0.6rem;
-  justify-content: center; 
-  gap: 2.5rem;  
-  position: absolute; 
+  justify-content: center;
+  gap: 2.5rem;
+  position: absolute;
   left: 20%;
 }
 
@@ -206,31 +208,31 @@ body > .intro {
 
 @keyframes onLoad {
   0% {
-    opacity: 0; 
+    opacity: 0;
     transform: translatey(50%);
   }
 
   100% {
-    opacity: 1; 
+    opacity: 1;
     transform: translateY(0%);
   }
 }
 
 @keyframes slideRight {
-  0% { 
+  0% {
     opacity: 0;
     transform: translateX(50%);
   }
 
   100% {
-    opacity: 1; 
-    transform: translateX(0%)
+    opacity: 1;
+    transform: translateX(0%);
   }
 }
 
 @media screen and (max-width: 800px) {
   body {
-    background: url(/assets/crew/background-crew-tablet.jpg);
+    background: url(../assets/crew/background-crew-tablet.jpg);
     background-position: cover;
     overflow-x: hidden;
     background-repeat: no-repeat;
@@ -269,7 +271,7 @@ body > .intro {
 
 @media screen and (max-width: 425px) {
   body {
-    background: url(/assets/crew/background-crew-mobile.jpg);
+    background: url(../assets/crew/background-crew-mobile.jpg);
     background-repeat: no-repeat;
     background-size: cover;
   }
@@ -302,7 +304,7 @@ body > .intro {
   }
 
   .description {
-    text-align: center; 
+    text-align: center;
     margin-top: 6rem;
   }
 
@@ -317,12 +319,13 @@ body > .intro {
   }
 
   .indicator {
-    position: absolute; 
-    top: 70%; 
+    position: absolute;
+    top: 70%;
     left: 43%;
   }
 
-  .right-arrow, .left-arrow {
+  .right-arrow,
+  .left-arrow {
     top: 68%;
   }
 
@@ -337,11 +340,15 @@ body > .intro {
     width: auto;
   }
 
-.indicator {
-  gap: 0.5rem;
-}
+  .indicator {
+    gap: 0.5rem;
+  }
 
   .image > img {
     height: 16rem;
+  }
+
+  nav > .active::before {
+    top: 2rem;
   }
 }

@@ -1,5 +1,5 @@
 body {
-  background: url(/assets/technology/background-technology-desktop.jpg);
+  background: url(../assets/technology/background-technology-desktop.jpg);
   background-repeat: no-repeat;
   background-position: contain;
   color: white;
@@ -214,7 +214,7 @@ header > img {
 
 @media screen and (max-width: 800px) {
   body {
-    background: url(/assets/technology/background-technology-tablet.jpg);
+    background: url(../assets/technology/background-technology-tablet.jpg);
     background-position: cover;
     overflow-x: hidden;
     background-repeat: no-repeat;
@@ -264,7 +264,7 @@ header > img {
 
 @media screen and (max-width: 425px) {
   body {
-    background: url(/assets/technology/background-technology-mobile.jpg);
+    background: url(../assets/technology/background-technology-mobile.jpg);
     background-repeat: no-repeat;
     background-size: cover;
   }

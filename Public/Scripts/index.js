@@ -1,7 +1,13 @@
-import { navStyle, getValues } from "/Scripts/functionality.js";
+import { navStyle, getValues } from "./functionality.js";
 
 const navOpener = document.querySelector(".nav-open");
 const nav = document.querySelector("nav");
 
-navOpener.addEventListener('click', () => navStyle(nav));
+navOpener.addEventListener("click", () => navStyle(nav));
+document
+  .querySelector(".explore")
+  .addEventListener(
+    "click",
+    () => (window.location.href = "destination-moon.html")
+  );
 getValues("nav", "secondary");

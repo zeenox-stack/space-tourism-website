@@ -1,5 +1,5 @@
 body {
-  background: url(/assets/home/background-home-desktop.jpg);
+  background: url(../assets/home/background-home-desktop.jpg);
   background-position: contain;
 }
 
@@ -145,7 +145,7 @@ header > img {
   }
 
   body {
-    background: url(/assets/home/background-home-tablet.jpg);
+    background: url(../assets/home/background-home-tablet.jpg);
     background-position: cover;
     overflow-x: hidden;
   }
@@ -187,7 +187,7 @@ header > img {
 
 @media screen and (max-width: 320px) {
   body {
-    background: url(/assets/home/background-home-mobile.jpg);
+    background: url(../assets/home/background-home-mobile.jpg);
   }
 
   .nav-open {
@@ -218,5 +218,9 @@ header > img {
   .explore {
     width: 3rem;
     height: 3rem;
+  }
+
+  nav > .active::before {
+    top: 2rem;
   }
 }

@@ -2,23 +2,28 @@ import {
   navStyle,
   contentDeliver,
   getValues,
-  splitLink
-} from "/Scripts/functionality.js";
+  splitLink,
+} from "./functionality.js";
 
 const values = mutate(splitLink(window.location.href, true));
 
 contentDeliver(values[0], values[1], document.body).then(() => {
   const navOpener = document.querySelector(".nav-open");
   const nav = document.querySelector(".main-nav");
+
+  navOpener.src = `../assets/shared/icon-${
+    navOpener.src.includes("hamburger") ? "close" : "hamburger"
+  }.svg`;
+
   navOpener.addEventListener("click", () => navStyle(nav));
   getValues(".main-nav", "nav");
-  getValues(".planet-nav", "secondary"); 
-  const img = document.querySelector('.planet > img'); 
-  img.style.opacity = 0; 
-  setTimeout(() => { 
+  getValues(".planet-nav", "secondary");
+  const img = document.querySelector(".planet > img");
+  img.style.opacity = 0;
+  setTimeout(() => {
     img.style.opacity = 1;
     img.style.animation = "slideRight 1s ease";
-  }, 1000)
+  }, 1000);
 });
 
 function mutate(val) {
